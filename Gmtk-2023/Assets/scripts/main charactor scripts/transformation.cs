@@ -31,6 +31,7 @@ public class transformation : MonoBehaviour
         else if (time <= 0 && isdayTime)
         {
             DuringNight();
+            isWarewolf = true;
             time = ReSetTime;
         }
         else
@@ -66,5 +67,26 @@ public class transformation : MonoBehaviour
     void WhenWarewolf()
     {
         spriteRenderer.sprite = WolfSprite.GetComponent<SpriteRenderer>().sprite;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Clowd"))
+        {
+            isWarewolf = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Clowd"))
+        {
+            if (isdayTime)
+            {
+                isWarewolf = false;
+            }
+            else
+            {
+                isWarewolf = true;
+            }
+        }
     }
 }

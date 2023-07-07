@@ -32,5 +32,5 @@ public class movement : MonoBehaviour
         Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.up = mousePos - new Vector2(transform.position.x, transform.position.y);
     }
-
+    
 }
