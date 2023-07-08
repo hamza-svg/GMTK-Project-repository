@@ -112,7 +112,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,7 +133,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,7 +154,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,7 +175,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,7 +196,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,7 +217,7 @@ TextureImporter:
         width: 16
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,7 +233,7 @@ TextureImporter:
       name: Destructable stuff and roof_6
       rect:
         serializedVersion: 2
-        x: 80
+        x: 62
         y: 107
         width: 2
         height: 5
@@ -254,7 +254,7 @@ TextureImporter:
       name: Destructable stuff and roof_7
       rect:
         serializedVersion: 2
-        x: 62
+        x: 80
         y: 107
         width: 2
         height: 5
@@ -275,9 +275,9 @@ TextureImporter:
       name: Destructable stuff and roof_8
       rect:
         serializedVersion: 2
-        x: 62
-        y: 112
-        width: 2
+        x: 80
+        y: 91
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,9 +296,9 @@ TextureImporter:
       name: Destructable stuff and roof_9
       rect:
         serializedVersion: 2
-        x: 62
-        y: 91
-        width: 2
+        x: 80
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -317,9 +317,9 @@ TextureImporter:
       name: Destructable stuff and roof_10
       rect:
         serializedVersion: 2
-        x: 80
-        y: 91
-        width: 2
+        x: 48
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -338,9 +338,9 @@ TextureImporter:
       name: Destructable stuff and roof_11
       rect:
         serializedVersion: 2
-        x: 80
-        y: 112
-        width: 2
+        x: 48
+        y: 91
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -364,7 +364,7 @@ TextureImporter:
         width: 11
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,7 +385,7 @@ TextureImporter:
         width: 16
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,7 +406,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -427,7 +427,7 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,7 +448,7 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
