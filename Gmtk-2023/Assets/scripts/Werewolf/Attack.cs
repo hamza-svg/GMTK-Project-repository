@@ -30,7 +30,8 @@ public class Attack : MonoBehaviour
                 if (gameObject.GetComponent<Transformation>().isWerewolf == true)
                 {
                     Debug.Log("Hit an obstacle!");
-                    if (Input.GetKey(KeyCode.Mouse0))
+                    
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         Destroy(collider.gameObject);
                     }
