@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Clowd
-  - enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
