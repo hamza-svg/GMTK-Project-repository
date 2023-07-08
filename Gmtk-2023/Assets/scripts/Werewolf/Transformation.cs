@@ -20,10 +20,10 @@ public class transformation : MonoBehaviour
         WolfSprite.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    void Update()
+    private void Update()
     {
-       
 
+        spriteRenderer.sprite = WolfSprite.GetComponent<SpriteRenderer>().sprite;
         if (time <= 0 && !isDayTime)
         {
             DuringDay();

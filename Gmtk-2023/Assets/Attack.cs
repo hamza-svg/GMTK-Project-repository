@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
                     collider.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                 }
             }
-            else if (collider.CompareTag("enemy") == null)
+            else if (collider.CompareTag("enemy") == false)
             {
                 collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
