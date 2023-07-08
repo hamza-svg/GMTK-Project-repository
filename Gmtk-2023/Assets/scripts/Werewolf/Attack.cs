@@ -10,10 +10,13 @@ public class Attack : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.GetComponent<transformation>();
+        gameObject.GetComponent<Transformation>();
     }
     private void Update()
     {
+        // Check if space is pressed
+        bool isKeyDown = Input.GetKey(KeyCode.Space);
+
         // Perform the overlap circle check
         Collider2D[] colliders = Physics2D.OverlapCircleAll(target.position, radius, layerMask);
 
@@ -24,22 +27,23 @@ public class Attack : MonoBehaviour
             Debug.Log("Collided with: " + collider.gameObject.name);
 
             // Example: Check if the collided object has a specific tag
-            if (collider.CompareTag("enemy"))
+            if (collider.CompareTag("Enemy"))
             {                
 
-                if (gameObject.GetComponent<transformation>().isWarewolf == true)
+                if (gameObject.GetComponent<Transformation>().isWerewolf == true)
                 {
                     Debug.Log("Hit an obstacle!");
-                    if (Input.GetKey(KeyCode.Mouse0))
+                    
+                    if (isKeyDown)
                     {
                         Destroy(collider.gameObject);
                     }
                     collider.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                 }
             }
-            else if(collider.CompareTag("enemy") == null)
+            else if(collider.CompareTag("Enemy") == null)
             {
-                collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                collider.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
             }
         }
