@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 314745331961261145}
   - component: {fileID: 314745331961261127}
   m_Layer: 0
-  m_Name: WareWolf
+  m_Name: Werewolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +138,6 @@ MonoBehaviour:
   humanSprite: {fileID: 7472915694074564991, guid: 8018460a94343194eaa461096268acfd, type: 3}
   WolfSprite: {fileID: 0}
   isdayTime: 1
-  isWarewolf: 0
+  isWerewolf: 0
   time: 10
   ReSetTime: 10

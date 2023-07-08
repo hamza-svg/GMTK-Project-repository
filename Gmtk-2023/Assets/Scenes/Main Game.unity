@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99789157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8037653, y: 1.0447553, z: -0.016336873}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 726345604}
   - component: {fileID: 726345609}
   m_Layer: 0
-  m_Name: warewolf
+  m_Name: Werewolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,10 +263,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanSprite: {fileID: 7472915694074564991, guid: 8018460a94343194eaa461096268acfd, type: 3}
   WolfSprite: {fileID: 314745331961261148, guid: 5ce7d05af2d97404482d366a5bcec5b2, type: 3}
-  isdayTime: 1
-  isWarewolf: 0
+  isDayTime: 1
+  isWerewolf: 0
   time: 10
-  ReSetTime: 10
+  ResetTime: 10
 --- !u!114 &726345606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.9150943, g: 0.3919366, b: 0.3919366, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -342,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726345603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8037653, y: 1.0447553, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 1162344464}
   - component: {fileID: 1162344463}
   m_Layer: 0
-  m_Name: Clowd
+  m_Name: Cloud
   m_TagString: Clowd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
