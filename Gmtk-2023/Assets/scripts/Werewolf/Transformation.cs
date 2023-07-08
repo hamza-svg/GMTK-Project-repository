@@ -14,11 +14,11 @@ public class Transformation : MonoBehaviour
     public float time = 10;
     public float ResetTime = 10;
 
-    private void Awake()
+    void Start()
     {
-        humanSprite.GetComponent<SpriteRenderer>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        Instantiate(WolfSprite, transform);
     }
+
     void Update()
     {
        
@@ -26,26 +26,32 @@ public class Transformation : MonoBehaviour
         if (time <= 0 && !isDayTime)
         {
             DuringDay();
+            isWerewolf = false;
             time = ResetTime;
+            Check();
         }
         else if (time <= 0 && isDayTime)
         {
             DuringNight();
             isWerewolf = true;
             time = ResetTime;
+            Check();
         }
         else
         {
             time -= Time.deltaTime;
         }
+    }
 
+    void Check()
+    {
         if (isWerewolf)
         {
-            WhenWerewolf();
-        }
-        else
-        {
-            WhenHuman();
+            Object.Destroy(transform.GetChild(0).gameObject);
+            Instantiate(WolfSprite, transform);
+        } else {
+            Object.Destroy(transform.GetChild(0).gameObject);
+            Instantiate(humanSprite, transform);
         }
     }
 
@@ -59,14 +65,6 @@ public class Transformation : MonoBehaviour
     {
         isDayTime = false;
         isWerewolf = true;
-    }
-    void WhenHuman()
-    {
-        spriteRenderer.sprite = humanSprite.GetComponent<SpriteRenderer>().sprite;
-    }
-    void WhenWerewolf()
-    {
-        spriteRenderer.sprite = WolfSprite.GetComponent<SpriteRenderer>().sprite;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -87,6 +85,7 @@ public class Transformation : MonoBehaviour
             {
                 isWerewolf = true;
             }
+            Check();
         }
     }
 }

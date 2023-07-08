@@ -7,7 +7,6 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
-    public Camera cam;
 
     Vector2 move;
 
