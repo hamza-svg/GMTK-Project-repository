@@ -6,10 +6,14 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public Transform player;
+    public float maxHealth;
+    [Range(0, 10)]
+    public int sight;
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool move;
+    private float health;
 
     void Start() {
         rb = this.GetComponent<Rigidbody2D>();
@@ -19,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 direction = player.position - transform.position;
         float distance = Vector3.Distance (player.position, transform.position);
 
-        if (Mathf.Ceil(distance) <= 5)
+        if (Mathf.Ceil(distance) <= sight)
         {
             move = false;
         } else {
@@ -42,5 +46,21 @@ public class EnemyBehaviour : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
+
+    void GetHit(float damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log(health);
+        Destroy(gameObject);
     }
 }

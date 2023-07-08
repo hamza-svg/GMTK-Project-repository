@@ -14,6 +14,9 @@ public class Attack : MonoBehaviour
     }
     private void Update()
     {
+        // Check if space is pressed
+        bool isKeyDown = Input.GetKey(KeyCode.Space);
+
         // Perform the overlap circle check
         Collider2D[] colliders = Physics2D.OverlapCircleAll(target.position, radius, layerMask);
 
@@ -31,7 +34,7 @@ public class Attack : MonoBehaviour
                 {
                     Debug.Log("Hit an obstacle!");
                     
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    if (isKeyDown)
                     {
                         Destroy(collider.gameObject);
                     }
