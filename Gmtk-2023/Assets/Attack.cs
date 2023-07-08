@@ -25,9 +25,9 @@ public class Attack : MonoBehaviour
 
             // Example: Check if the collided object has a specific tag
             if (collider.CompareTag("enemy"))
-            {                
+            {
 
-                if (gameObject.GetComponent<transformation>().isWarewolf == true)
+                if (gameObject.GetComponent<transformation>().isWerewolf == true)
                 {
                     Debug.Log("Hit an obstacle!");
                     if (Input.GetKey(KeyCode.Mouse0))
@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
                     collider.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                 }
             }
-            else
+            else if (collider.CompareTag("enemy") == null)
             {
                 collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 

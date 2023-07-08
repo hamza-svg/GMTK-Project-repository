@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Transformation : MonoBehaviour
+public class transformation : MonoBehaviour
 {
 
     public GameObject humanSprite;
@@ -17,6 +17,7 @@ public class Transformation : MonoBehaviour
     private void Awake()
     {
         humanSprite.GetComponent<SpriteRenderer>();
+        WolfSprite.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
@@ -42,6 +43,7 @@ public class Transformation : MonoBehaviour
         if (isWerewolf)
         {
             WhenWerewolf();
+            spriteRenderer.sprite = WolfSprite.GetComponent<SpriteRenderer>().sprite;
         }
         else
         {
