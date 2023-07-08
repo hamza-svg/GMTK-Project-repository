@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class transformation : MonoBehaviour
+public class Transformation : MonoBehaviour
 {
 
     public GameObject humanSprite;
     public GameObject WolfSprite;
 
-    public bool isdayTime = true;
+    public bool isDayTime = false;
 
-    public bool isWarewolf = false;
+    public bool isWerewolf = false;
     SpriteRenderer spriteRenderer;
 
     public float time = 10;
-    public float ReSetTime = 10;
+    public float ResetTime = 10;
 
     private void Awake()
     {
@@ -23,25 +23,25 @@ public class transformation : MonoBehaviour
     {
        
 
-        if (time <= 0 && !isdayTime)
+        if (time <= 0 && !isDayTime)
         {
             DuringDay();
-            time = ReSetTime;
+            time = ResetTime;
         }
-        else if (time <= 0 && isdayTime)
+        else if (time <= 0 && isDayTime)
         {
             DuringNight();
-            isWarewolf = true;
-            time = ReSetTime;
+            isWerewolf = true;
+            time = ResetTime;
         }
         else
         {
             time -= Time.deltaTime;
         }
 
-        if (isWarewolf)
+        if (isWerewolf)
         {
-            WhenWarewolf();
+            WhenWerewolf();
         }
         else
         {
@@ -51,20 +51,20 @@ public class transformation : MonoBehaviour
 
     void DuringDay()
     {
-        isdayTime = true;
-        isWarewolf = false;
+        isDayTime = true;
+        isWerewolf = false;
 
     }
     void DuringNight()
     {
-        isdayTime = false;
-        isWarewolf = true;
+        isDayTime = false;
+        isWerewolf = true;
     }
     void WhenHuman()
     {
         spriteRenderer.sprite = humanSprite.GetComponent<SpriteRenderer>().sprite;
     }
-    void WhenWarewolf()
+    void WhenWerewolf()
     {
         spriteRenderer.sprite = WolfSprite.GetComponent<SpriteRenderer>().sprite;
     }
@@ -72,20 +72,20 @@ public class transformation : MonoBehaviour
     {
         if (collision.CompareTag("Clowd"))
         {
-            isWarewolf = false;
+            isWerewolf = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Clowd"))
         {
-            if (isdayTime)
+            if (isDayTime)
             {
-                isWarewolf = false;
+                isWerewolf = false;
             }
             else
             {
-                isWarewolf = true;
+                isWerewolf = true;
             }
         }
     }
