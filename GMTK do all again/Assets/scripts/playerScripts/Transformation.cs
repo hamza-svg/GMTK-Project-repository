@@ -42,11 +42,13 @@ public class Transformation : MonoBehaviour
         {
             warewolf.SetActive(true);
             human.SetActive(false);
+            gameObject.GetComponent<PlayerMovement>().moveSpeed = 10;
         }
         else
         {
             warewolf.SetActive(false);
             human.SetActive(true);
+            gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
         }
     }
     void DayAndNightCheck()
