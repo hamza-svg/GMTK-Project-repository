@@ -25,9 +25,6 @@ public class BackgroundChanger : MonoBehaviour
         rend.material.color = c;
 
         Camera cam = GetComponent<Camera>();
-        GameObject thePlayer = GameObject.Find("Werewolf");
-        Transformation playerScript = thePlayer.GetComponent<Transformation>();
-        isDayTime = playerScript.isDayTime;
     }
 
     IEnumerator FadeToBlack()
@@ -47,6 +44,10 @@ public class BackgroundChanger : MonoBehaviour
 
     void Update()
     {
+        GameObject Player = GameObject.Find("Werewolf");
+
+        Transformation playerScript = Player.GetComponent<Transformation>();
+        isDayTime = playerScript.isDayTime;
         if (!isDayTime)
         {
             StartFadeToBlack();

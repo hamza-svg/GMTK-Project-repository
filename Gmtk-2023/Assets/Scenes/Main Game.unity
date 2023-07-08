@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 726345605}
   - component: {fileID: 726345604}
   - component: {fileID: 726345609}
+  - component: {fileID: 726345610}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -365,6 +366,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &726345610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726345603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bf90b2f5388a147849d68d80d75fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDayTime: 0
+  fadeToBlackAmount: 0
+  fadingSpeed: 0
 --- !u!1 &1162344462
 GameObject:
   m_ObjectHideFlags: 0

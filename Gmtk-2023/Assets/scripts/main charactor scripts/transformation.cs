@@ -6,7 +6,7 @@ public class Transformation : MonoBehaviour
     public GameObject humanSprite;
     public GameObject WolfSprite;
 
-    public bool isDayTime = true;
+    public bool isDayTime = false;
 
     public bool isWerewolf = false;
     SpriteRenderer spriteRenderer;
