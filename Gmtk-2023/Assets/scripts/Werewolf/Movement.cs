@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     public Camera cam;
 
     Vector2 move;
-    Vector2 mousePos;
 
     // Update is called once per frame
     void Update()
