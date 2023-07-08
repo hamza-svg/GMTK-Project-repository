@@ -22,6 +22,10 @@ public class Movement : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x = -1;
             transform.localScale = scale;
+        } else if (move.x > 0 && transform.localScale.x < 0) {
+            Vector3 scale = transform.localScale;
+            scale.x = 1;
+            transform.localScale = scale;
         }
     }
 

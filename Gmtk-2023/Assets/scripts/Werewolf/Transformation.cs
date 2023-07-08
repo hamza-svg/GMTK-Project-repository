@@ -70,14 +70,14 @@ public class Transformation : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Clowd"))
+        if (collision.CompareTag("Cloud"))
         {
             isWerewolf = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Clowd"))
+        if (collision.CompareTag("Cloud"))
         {
             if (isDayTime)
             {

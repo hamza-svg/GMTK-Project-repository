@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 1682919814}
   m_Layer: 0
   m_Name: Cloud
-  m_TagString: Clowd
+  m_TagString: Cloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f602de0c7b076944380f0379f3e3f34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 2
   layerMask:
     serializedVersion: 2
     m_Bits: 0
