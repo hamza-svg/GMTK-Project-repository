@@ -14,6 +14,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        try
+        {
+            if (gameObject.GetComponent<Attack>().isDashing)
+            {
+                return;
+            }
+        } catch {
+            Debug.Log("");
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
