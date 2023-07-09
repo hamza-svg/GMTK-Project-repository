@@ -5,58 +5,79 @@ using UnityEngine;
 public class Transformation : MonoBehaviour
 {
     [Header("transformation")]
-    public bool isWareWolf = false;
-    public GameObject warewolf;
+    public bool isWerewolf = false;
+    public GameObject werewolf;
     public GameObject human;
 
     [Header("Duration of day and night")]
     public bool isDayTime;
     public float time;
     public float resetTime;
-    // Start is called before the first frame update
     
+    void Start()
+    {
+        // Create werewolf form
+        Instantiate(human, transform);
+
+        //change move speed
+        gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
+        human.GetComponent<PlayerMovement>().moveSpeed = 5;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        // if it is night time
         if (time <= 0 && isDayTime)
         {
             isDayTime = false;
             time = resetTime;
-        }
+            transformationCheck();
+        } // if it is daytime
         else if (time <= 0 && !isDayTime)
         {
-            isDayTime=true;
+            isDayTime = true;
             time = resetTime;
-        }
+            transformationCheck();
+        } // always
         else
         {
             time -= Time.deltaTime;
         }
-        tranformationCheck();
         DayAndNightCheck();
     }
-    void tranformationCheck()
+    void transformationCheck()
     {
-        if (isWareWolf)
+        // if you are werewolf
+        if (isWerewolf)
         {
-            warewolf.SetActive(true);
-            human.SetActive(false);
+            //Destroy Human Form
+            Destroy(transform.GetChild(1).gameObject);
+
+            // Create werewolf form
+            Instantiate(werewolf, transform);
+
+            //change move speed
             gameObject.GetComponent<PlayerMovement>().moveSpeed = 10;
-        }
-        else
+            werewolf.GetComponent<PlayerMovement>().moveSpeed = 10;
+        } // if you are human
+        
+        if (!isWerewolf)
         {
-            warewolf.SetActive(false);
-            human.SetActive(true);
+            //Destroy werewolf form
+            Destroy(transform.GetChild(1).gameObject);
+
+            //Create Human Form
+            Instantiate(human, transform);
+
+            //change move speed
             gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
+            human.GetComponent<PlayerMovement>().moveSpeed = 5;
         }
     }
     void DayAndNightCheck()
     {
-        if (isDayTime)
-        {
-            isWareWolf = false;
-        }
-        else { isWareWolf = true; }
+        if (isDayTime) { isWerewolf = false; }
+        else { isWerewolf = true; }
     }
 }
