@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public float radius = 1f;
+    public float attackRadius;
     public LayerMask layerMask;
     public Transform target;
 
@@ -14,37 +14,14 @@ public class Attack : MonoBehaviour
     }
     private void Update()
     {
-        // Check if space is pressed
-        bool isKeyDown = Input.GetKey(KeyCode.Space);
-
-        // Perform the overlap circle check
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(target.position, radius, layerMask);
-
-        // Process the colliders that are within the overlap circle
-        foreach (Collider2D collider in colliders)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Do something with the collider (e.g., apply an effect, trigger an event)
-            Debug.Log("Collided with: " + collider.gameObject.name);
-
-            // Example: Check if the collided object has a specific tag
-            if (collider.CompareTag("Enemy"))
-            {                
-
-                if (gameObject.GetComponent<Transformation>().isWerewolf == true)
-                {
-                    Debug.Log("Hit an obstacle!");
-                    
-                    if (isKeyDown)
-                    {
-                        Destroy(collider.gameObject);
-                    }
-                    collider.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                }
-            }
-            else if(!collider.CompareTag("Enemy"))
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(target.position, attackRadius, layerMask);
+            Debug.Log(hitEnemies);
+            foreach (Collider2D enemy in hitEnemies)
             {
-                collider.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-
+                int damage = Random.Range(14, 20);
+                enemy.GetComponent<EnemyFollowPlayer>().Hit(damage);
             }
         }
     }
@@ -53,6 +30,6 @@ public class Attack : MonoBehaviour
     {
         // Visualize the overlap circle in the Scene view
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(target.position, radius);
+        Gizmos.DrawWireSphere(target.position, attackRadius);
     }
 }
