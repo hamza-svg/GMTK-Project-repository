@@ -118,7 +118,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 6122954304077013053}
+  m_RootBone: {fileID: 6122954304149598314}
   m_BoneTransforms:
   - {fileID: 6122954304016500139}
   - {fileID: 6122954304077013053}
@@ -193,6 +193,7 @@ MonoBehaviour:
   moveSpeed: 10
   facingRight: 1
   maxHealth: 5
+  anim: {fileID: 6122954303420273981}
   rb: {fileID: 6122954303420273969}
 --- !u!50 &6122954303420273969
 Rigidbody2D:
@@ -250,7 +251,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

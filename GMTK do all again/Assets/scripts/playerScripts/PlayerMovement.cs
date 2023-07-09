@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = true;
     public int maxHealth;
 
+    public GameObject blood;
+    public Animator anim;
     public Rigidbody2D rb;
 
     Vector2 movement;
@@ -31,6 +33,18 @@ public class PlayerMovement : MonoBehaviour
                 Flip();
             }
         }
+
+        anim.SetFloat("MovementX", Mathf.Abs(movement.x));
+
+        if (gameObject.GetComponent<Transform>().position.x >= 22.614 || gameObject.GetComponent<Transform>().position.x <= -19.61)
+        {
+            movement.x = 0;
+        }
+
+        if (gameObject.GetComponent<Transform>().position.y >= 9.616 || gameObject.GetComponent<Transform>().position.y <= -10.61)
+        {
+            movement.y = 0;
+        }
     }
 
     void FixedUpdate()
@@ -50,11 +64,15 @@ public class PlayerMovement : MonoBehaviour
     public void GetHit(int damage)
     {
         health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     void Die()
     {
         // Move on the End Screen
-        return;
+        Destroy(GameObject.Find("Player"));
     }
 }

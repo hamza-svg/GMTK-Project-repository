@@ -13,6 +13,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public GameObject bulletParent;
     public int maxHealth = 100;
     public int currentHealth;
+    public GameObject blood;
 
     // Private Variables
     private float nextFireTime;
@@ -43,6 +44,8 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             Die();
         }
+
+        Instantiate(blood);
     }
 
     void Die()

@@ -160,6 +160,7 @@ MonoBehaviour:
   bulletParent: {fileID: 1652069901579376022}
   maxHealth: 100
   currentHealth: 0
+  blood: {fileID: 1228703184491987003, guid: dc25fa5b1d1f8a94ca313e23e3ea514f, type: 3}
 --- !u!61 &7477866356287962748
 BoxCollider2D:
   m_ObjectHideFlags: 0
