@@ -22,7 +22,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.name == "Werewolf" || collision.name == "Human")
         {
-            Debug.Log("Collision Detected");
+            collision.gameObject.GetComponent<PlayerMovement>().GetHit(1);
         }
     }
 }

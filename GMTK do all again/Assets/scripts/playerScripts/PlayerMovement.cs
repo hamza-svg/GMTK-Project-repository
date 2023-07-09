@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    void GetHit(int damage)
+    public void GetHit(int damage)
     {
         health -= damage;
     }
