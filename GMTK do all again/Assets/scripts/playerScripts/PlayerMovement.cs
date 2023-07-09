@@ -5,31 +5,33 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float Rotatespeed = 5f;
-   
-    public Rigidbody2D rb;
-    public Camera cam;
+    public float rotationSpeed = 5f;
 
-    Vector2 movement;
+    private Rigidbody2D rb;
+    private Vector2 movement;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+    }
 
-
-        Vector2 moveANDlook = new Vector2(movement.x, movement.y);
-    
-
-     if (movement.magnitude > 0)
-     {
+    private void FixedUpdate()
+    {
+        // Rotate the character towards the movement direction
+        if (movement.magnitude > 0)
+        {
             float targetAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90;
             Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetAngle);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Rotatespeed * Time.deltaTime);
-     }
+            rb.MoveRotation(Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime));
+        }
 
-         // Move the character using the movement vector
-         transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+        // Apply movement to the rigidbody
+        rb.velocity = movement * moveSpeed;
     }
 }

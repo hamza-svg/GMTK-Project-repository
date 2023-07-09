@@ -48,4 +48,15 @@ public class attack : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(target.transform.position, radius);
     }
+   /* private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GetComponent<Transformation>().isWareWolf)
+        {
+            if (collision.collider.tag == "enemy")
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        
+    }*/
 }
