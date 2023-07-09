@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed;
+
     private GameObject target;
     private Rigidbody2D rb;
 
@@ -15,5 +16,13 @@ public class BulletScript : MonoBehaviour
         Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
         rb.velocity = new Vector2(moveDir.x, moveDir.y);
         Destroy(this.gameObject, 2);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Werewolf" || collision.name == "Human")
+        {
+            Debug.Log("Collision Detected");
+        }
     }
 }

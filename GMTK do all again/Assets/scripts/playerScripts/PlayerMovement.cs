@@ -6,27 +6,20 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public bool facingRight = true;
+    public int maxHealth;
 
     public Rigidbody2D rb;
 
     Vector2 movement;
+    int health;
 
     // Update is called once per frame
     void Update()
     {
-        try
-        {
-            if (gameObject.GetComponent<Attack>().isDashing)
-            {
-                return;
-            }
-        } catch {
-            Debug.Log("");
-        }
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        // Flip the player
         if (gameObject.name == "Player")
         {
             if (movement.x > 0 && !facingRight)
@@ -52,5 +45,16 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.localScale = currentScale;
 
         facingRight = !facingRight;
+    }
+
+    void GetHit(int damage)
+    {
+        health -= damage;
+    }
+
+    void Die()
+    {
+        // Move on the End Screen
+        return;
     }
 }

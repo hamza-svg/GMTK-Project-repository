@@ -21,7 +21,6 @@ public class Transformation : MonoBehaviour
 
         //change move speed
         gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
-        human.GetComponent<PlayerMovement>().moveSpeed = 5;
     }
 
     // Update is called once per frame
@@ -59,7 +58,6 @@ public class Transformation : MonoBehaviour
 
             //change move speed
             gameObject.GetComponent<PlayerMovement>().moveSpeed = 10;
-            werewolf.GetComponent<PlayerMovement>().moveSpeed = 10;
         } // if you are human
         
         if (!isWerewolf)
@@ -72,7 +70,6 @@ public class Transformation : MonoBehaviour
 
             //change move speed
             gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
-            human.GetComponent<PlayerMovement>().moveSpeed = 5;
         }
     }
     void DayAndNightCheck()
